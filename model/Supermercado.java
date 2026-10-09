@@ -2,10 +2,10 @@ package model;
 
 public class Supermercado {
     private String[] nomeProdutos = new String[3];
-    private double[] precos = new double[3];
-    private double[] descontos = new double[3];
+    private Double[] precos = new Double[3];
+    private Double[] descontos = new Double[3];
 
-    public static void listar() {
+    public void listar() {
         int qnt = 0;
 
         System.out.println("==========Lista==========");
@@ -32,7 +32,7 @@ public class Supermercado {
         }
     }
 
-    public static void total() {
+    public void total() {
         int qnt = 0;
 
         double valorTotal = 0;
@@ -62,7 +62,7 @@ public class Supermercado {
         }
     }
 
-    public static void maisCaro() {
+    public void maisCaro() {
         int qnt = 0;
 
         int indice = -1;
@@ -105,22 +105,22 @@ public class Supermercado {
         
         if (indice < 0 || indice > 2)
         {
-            System..out.println("Está fora do tamanho da lista!");
+            System.out.println("Está fora do tamanho da lista!");
             return;
         }
 
-        if (precos[i] != null && precos[i] > 0) {
-
-            nomeProdutos[indice] = "";
-            precos[indice] = 0;
-            descontos[indice] = 0;
+        if (precos[indice] != null && precos[indice] > 0) {
 
             System.out.println(nomeProdutos[indice] + " Foi comprado!");
             System.out.println("=========================");
             System.out.println("");
+
+            nomeProdutos[indice] = "";
+            precos[indice] = null;
+            descontos[indice] = null;
         }
         else {
-            System..out.println("Produto inexistente!");
+            System.out.println("Produto inexistente!");
             return;
         }
 
@@ -130,12 +130,12 @@ public class Supermercado {
         
         if (indice < 0 || indice > 2)
         {
-            System..out.println("Está fora do tamanho da lista!");
+            System.out.println("Está fora do tamanho da lista!");
             return;
         }
 
-        if (precos[i] != null && precos[i] > 0) {
-            System..out.println("Já existe um produto aqui!");
+        if (precos[indice] != null && precos[indice] > 0) {
+            System.out.println("Já existe um produto aqui!");
             return;
         }
 
